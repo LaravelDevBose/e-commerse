@@ -32,10 +32,16 @@
 				<td><?= $order->address; ?></td>
 				<td><?= $order->total_qty; ?></td>
 				<td><?= $order->total_amount; ?></td>
-				<td><?= $order->order_date; ?></td>
+				<?php 
+                 $date = new DateTime($order->order_date);
+                 $order_date = date_format($date, 'd F Y');
+                  
+                  ?>
+				<td><?= $order_date; ?></td>
 				<td class="text-center">
 					<ul class="icons-list">
-						<li class="text-primary-600"><a  href="<?php echo base_url();?>product/edit/<?php echo $order->id?>" ><i class="icon-pencil7"></i> Deliver</a></li>
+						<li class="text-info"><a title="View Order" href="<?php echo base_url();?>order/view/<?php echo $order->id?>" ><i class="icon-eye"></i></a></li>
+						<li class="text-success"><a title="Deliver Order" href="<?php echo base_url();?>order/deliver/<?php echo $order->id?>"  ><i class="icon-truck"></i></a></li>
 						
 							
 					</ul>

@@ -111,3 +111,6 @@ $route['password/check'] = 'Sub_admin/old_password_check';
 $route['order/list'] = 'Order/order_list';
 $route['deliver/order/list'] = 'Order/deliver_order_list';
 
+$route['order/view/(:any)'] = 'Order/view_order_product/$1';
+$route['order/deliver/(:any)'] = 'Order/deliver_order/$1';
+

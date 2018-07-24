@@ -76,12 +76,5 @@ Class Cart_model extends CI_Model{
 		if($cart): return TRUE; else: return FALSE; endif;
 	}
 
-	/*============  Get Undeliver order list==========*/
-	public function get_undeliver_order_data()
-	{
-		$result = $this->db->where('order_status', 0)->order_by('id', 'desc')->get('shipping')->result();
-
-		
-		if($result): return $result; else: return FALSE; endif;
-	}
+	
 }

@@ -33,11 +33,11 @@
 
 					<!-- Main -->
 					<li class="active"><a href="<?php echo base_url();?>dashboard"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
-					<li><a href="<?php echo base_url();?>order/list"><i class="icon-list-unordered"></i> <span> Order List</span></a></li>
-					<li><a href="<?php echo base_url();?>deliver/order/list"><i class="icon-list-unordered"></i> <span> Deliver Order List</span></a></li>
+					<li><a href="<?php echo base_url();?>order/list"><i class="icon-cart2"></i> <span> Order List</span></a></li>
+					<li><a href="<?php echo base_url();?>deliver/order/list"><i class="icon-truck"></i> <span> Deliver Order List</span></a></li>
 					<li><a href="<?php echo base_url();?>brand"><i class="icon-list-unordered"></i> <span> Brand</span></a></li>
-					<li><a href="<?php echo base_url();?>category"><i class="icon-spinner3 spinner"></i> <span> Category</span></a></li>
-					<li><a href="<?php echo base_url();?>products"><i class="icon-spinner3 spinner"></i> <span> Products</span></a></li>
+					<li><a href="<?php echo base_url();?>category"><i class=" icon-cog2"></i> <span> Category</span></a></li>
+					<li><a href="<?php echo base_url();?>products"><i class="icon-bag"></i> <span> Products</span></a></li>
 
 					<li> <a href="#"><i class="icon-stack2"></i> <span>Template Design</span></a>
 						<ul>
@@ -47,7 +47,7 @@
 							
 						</ul>
 					</li>
-					<li><a href="<?php echo base_url();?>admin_page"><i class="icon-spinner3 spinner"></i> <span> Admins</span></a></li>
+					<li><a href="<?php echo base_url();?>admin_page"><i class="icon-user-lock"></i> <span> Admins</span></a></li>
 
 				</ul>
 			</div>
