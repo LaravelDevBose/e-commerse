@@ -138,4 +138,18 @@ Class Product extends CI_Controller{
 		}
 		
 	}
+
+	public function delete($id = null)
+	{
+		
+		if($this->Product_model->product_delete($id)){
+			$data['success'] = 'Your Product Delete Successfully.';
+			$this->session->set_flashdata($data);
+			redirect('products');
+		}else{
+			$data['error'] = 'Your Product Not Delete Successfully.';
+			$this->session->set_flashdata($data);
+			redirect('products');
+		}
+	}
 }

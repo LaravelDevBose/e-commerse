@@ -68,7 +68,7 @@
 				dataType:'json',
 				data:{'title':title},
 				success:function(data){
-					alert(data);
+					
 					if(data == 0){
 						swal({
 		                  text: "Category Information not Insert. Try again Later.",

@@ -52,7 +52,7 @@
 				<td class="text-center">
 					<ul class="icons-list">
 						<li class="text-primary-600"><a  href="<?php echo base_url();?>product/edit/<?php echo $product->id?>" ><i class="icon-pencil7"></i></a></li>
-						<li class="text-danger-600"><a href="#"><i class="icon-trash"></i></a></li>
+						<li class="text-danger-600"><a onclick="return confirm('Are You went to delete this Product.?');" href="<?= base_url(); ?>product/delete/<?= $product->id; ?>"><i class="icon-trash"></i></a></li>
 							
 					</ul>
 				</td>

@@ -73,6 +73,7 @@ $route['product/insert'] = 'Product/insert';
 $route['product/store'] = 'Product/store';
 $route['product/edit/(:any)'] = 'Product/edit/$1';
 $route['product/update/(:any)'] = 'Product/update/$1';
+$route['product/delete/(:any)'] = 'Product/delete/$1';
 $route['image/delete/(:any)/(:any)'] = 'Product/image_delete/$1/$2';
 
 

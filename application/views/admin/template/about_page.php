@@ -27,12 +27,12 @@
     				
     				<div class="col-md-12" style="margin-bottom: 30px;">
 						<label class="col-lg-3 control-label"> About Us: </label>
-						<label class="col-md-8 control-label about_us_text"><?= $about_us->value; ?></label>
+						<label class="col-md-8 control-label about_us_text"><?php if($about_us){ echo $about_us->value;} ?></label>
 						<button class="btn btn-sm btn-info col-md-1" onclick="showHideDiv('about_us')" >edit</button>
 
 						<div class="form-group" id="about_us" style="display: none;">
 							<div class="col-lg-7 col-md-offset-3">
-								<textarea name="about_us" class="form-control" placeholder="About Web site..."></textarea>
+								<textarea name="about_us" class="form-control summernote-height" placeholder="About Web site..."></textarea>
 								<span id="about_error" class="text-danger text-semibold" style="display: none;">About Us Field is required. insert First</span>
 							</div>
 							<div class="col-md-2">
@@ -57,7 +57,7 @@
     				
 					<div class="col-md-12" style="margin-bottom: 30px;">
 						<label class="col-lg-3 control-label"> Address: </label>
-						<label class="col-md-8 control-label address_text"><?= $address->value; ?></label>
+						<label class="col-md-8 control-label address_text"><?php if($address){ echo $address->value; } ?></label>
 						<button class="btn btn-sm btn-info col-md-1" onclick="showHideDiv('address')" >edit</button>
 
 						<div class="form-group" id="address" style="display: none;">
@@ -76,7 +76,7 @@
 
 					<div class="col-md-12" style="margin-bottom: 30px;">
 						<label class="col-lg-3 control-label"> Phone: </label>
-						<label class="col-md-8 control-label phone_text"><?= $phone->value; ?></label>
+						<label class="col-md-8 control-label phone_text"><?php if($phone){ echo $phone->value; }?></label>
 						<button class="btn btn-sm btn-info col-md-1" onclick="showHideDiv('phone')" >edit</button>
 
 						<div class="form-group" id="phone" style="display: none;">
@@ -94,7 +94,7 @@
 
 					<div class="col-md-12" style="margin-bottom: 30px;">
 						<label class="col-lg-3 control-label"> E-Mail: </label>
-						<label class="col-md-8 control-label email_text"><?= $email->value; ?></label>
+						<label class="col-md-8 control-label email_text"><?php if($email){ echo $email->value;} ?></label>
 						<button class="btn btn-sm btn-info col-md-1" onclick="showHideDiv('email')" >edit</button>
 
 						<div class="form-group" id="email" style="display: none;">
@@ -110,22 +110,7 @@
 						<br>
 					</div>
 
-	    			<div class="col-md-12" style="margin-bottom: 30px;">
-						<label class="col-lg-3 control-label"> Map Address: </label>
-						<label class="col-md-8 control-label">hhhhhhhhhhhhhhhhh</label>
-						<button class="btn btn-sm btn-info col-md-1" onclick="showHideDiv('google_map')" >edit</button>
-
-						<div class="form-group" id="google_map" style="display: none;">
-							<div class="col-lg-7 col-md-offset-3">
-								<input type="text" name="google_map" class="form-control"  placeholder="Google Map Location">
-							</div>
-							<div class="col-md-2">
-								<button class="btn btn-success btn-sm google_map">Submit</button>
-							</div>
-							<br>
-						</div>
-						<br>
-					</div>
+	    			
 	    		</div>
 			</fieldset>
 		</div>

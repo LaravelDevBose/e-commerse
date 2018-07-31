@@ -268,8 +268,8 @@ Class Product_model extends CI_Model{
 
 				if( is_uploaded_file( $temp_name ) ){
 
-				move_uploaded_file( $temp_name, './libs/upload_pic/product_image/'.$file_name );
-				return './libs/upload_pic/product_image/'.$file_name;
+				move_uploaded_file( $temp_name, 'libs/upload_pic/product_image/'.$file_name );
+				return 'libs/upload_pic/product_image/'.$file_name;
 				
 			}else{
 				return false;
@@ -292,7 +292,7 @@ Class Product_model extends CI_Model{
 		 $configSize1['width']           = 450;
 		 $config['quality']   			 = '100';
 		 $configSize1['height']          = 350;
-		 $configSize1['new_image'] 		 = './libs/upload_pic/product_image/';
+		 $configSize1['new_image'] 		 = 'libs/upload_pic/product_image/';
 
 		 $this->image_lib->initialize($configSize1);
 		 $this->image_lib->resize();
@@ -319,6 +319,33 @@ Class Product_model extends CI_Model{
 	}
 
 
+/*========= product delete============*/
+	public function product_delete($id=null)
+	{
+		
+		$this->db->where('id', $id);
+		$this->db->delete('products');
+
+		$product_images = $this->db->where('product_id', $id)->get('product_images')->result();
+		var_dump($product_images); exit();
+		if($this->db->affected_rows()){
+
+			if(isset($product_images)){
+				foreach ($product_images as $image) {
+
+					$this->db->where('id', $image->id);
+					$this->db->delete('product_images');
+					if(file_exists($image->image_path)){
+						unlink($image->image_path);
+					}
+				}
+			}
+			
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
 
 
 
