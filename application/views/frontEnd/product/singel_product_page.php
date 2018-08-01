@@ -179,7 +179,7 @@
 							<?php if($t_product->prv_price): ?><del><?= $t_product->prv_price; ?> Tk</del> <?php endif; ?>
 							<em class="item_price"><?= $t_product->price ;?> Tk</em>
 						</p>
-						<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+						<a href="#" data-text="Add To Cart" data-product_id="<?= $t_product->id; ?>" data-product_name="<?= ucfirst($t_product->product_name);?>" data-qty="1" data-price="<?= $t_product->price ;?>" class="my-cart-b  cart_add">Add To Cart</a>
 					</div>
 				</div>
 			</div>

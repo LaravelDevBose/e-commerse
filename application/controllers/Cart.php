@@ -87,7 +87,7 @@ Class Cart extends CI_Controller{
 
 	public function cart_info()
 	{
-		$data=['total'=>$this->cart->total(), 'item_qty'=>count($this->cart->contents())];
+		$data=array('total'=>$this->cart->total(), 'item_qty'=>count($this->cart->contents()));
 
 		echo json_encode($data);
 	}

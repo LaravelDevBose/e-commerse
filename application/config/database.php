@@ -77,13 +77,13 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 
-	'username' => 'root',
-	'password' => '',
-	'database' => 'e_commers',
+// 	'username' => 'root',
+// 	'password' => '',
+// 	'database' => 'e_commers',
 
-	// 'username' => 'khantradingb0_web',
-	// 'password' => 'e{n7#z*~{oGI',
-	// 'database' => 'khantradingb0_web',
+	'username' => 'khantradingb0_web',
+	'password' => 'e{n7#z*~{oGI',
+	'database' => 'khantradingb0_web',
 
 	
 	'dbdriver' => 'mysqli',
