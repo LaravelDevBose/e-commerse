@@ -169,7 +169,7 @@
 						<div class="col-lg-12">
 							<?php
 							 	$images = $this->db->where('product_id', $product->id)->get('product_images')->result(); 
-							 	if(isset($images)):
+							 	if(count($images) <=0  && isset($images)):
 							 		foreach($images as $image):
 							?>
 							<div class="col-md-4">

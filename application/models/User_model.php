@@ -43,10 +43,10 @@ Class User_model extends CI_Model{
 		$user_id = $this->db->insert_id();
 		if($insert)
 		{	
-			$data=[
+			$data=array(
 				'user_id'  =>$user_id,
 				'user_name'=>$this->input->post('name'),
-			];
+			);
 			$this->session->set_userdata($data);
 			return TRUE;
 		}

@@ -8,6 +8,31 @@
 	    white-space: nowrap;
 	}
 </style>
+<style type="text/css">
+	.c_header{
+		background-color: #1565c0;
+		color: #fff;
+		border-bottom: 3px solid #e44102;
+	    padding: 10px 15px;
+	    
+	    border-top-left-radius: 3px;
+	    border-top-right-radius: 3px;
+	}
+
+	
+
+	.md-name{
+		color: #00ad85;
+		font-weight: bold;
+	}
+	.md-des{
+		font-weight: 500;
+		font-size: 13px;
+		font-style: italic;
+	}
+
+
+</style>
 <body>
 
 	<!--header-->

@@ -36,7 +36,7 @@ Class Cart_model extends CI_Model{
 		if(count($cart_products) > 0){
 			foreach ($cart_products as $product) {
 				
-				$attr = [
+				$attr = array(
 					'shipping_id' 	=>$shipping_id,
 					'product_id'	=>$product['id'],
 					'product_name'	=>$product['name'],
@@ -44,7 +44,7 @@ Class Cart_model extends CI_Model{
 					'price'			=>$product['price'],
 					'sub_total'		=>$product['qty']*$product['price'],
 
-				];
+				);
 				$insert = $this->db->insert('orders', $attr);
 				if($insert){
 					$count++;
@@ -65,12 +65,12 @@ Class Cart_model extends CI_Model{
 	/*=========  Insert Into Cart============*/
 	public function insert_product_into_cart()
 	{
-		$data=[
+		$data=array(
 			'id'	=>$this->input->post('product_id'),
 			'name'	=>$this->input->post('product_name'),
 			'qty'	=>$this->input->post('qty'),
 			'price'	=>$this->input->post('price'),
-		];
+		);
 		$cart = $this->cart->insert($data);
 		
 		if($cart): return TRUE; else: return FALSE; endif;

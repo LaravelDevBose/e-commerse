@@ -26,6 +26,8 @@ $route['cart/remove'] = 'Cart/remove_cart';
 $route['cart/update'] = 'Cart/update_cart';
 $route['cart/info'] = 'Cart/cart_info';
 
+$route['message-of-md'] = 'FrontEnd/md_message_show';
+$route['news-and-event/(:any)'] = 'FrontEnd/read_news_event/$1';
 
 // $route['shipping'] = 'FrontEnd/shipping_page';
 
@@ -83,6 +85,12 @@ $route['about_us'] = 'Template/about_us';
 $route['address'] = 'Template/address';
 $route['phone'] = 'Template/phone_number';
 $route['email'] = 'Template/email_address';
+$route['wellcome_note'] = 'Template/wellcome_note_page';
+$route['wellcome_note/update'] = 'Template/wellcome_note_update';
+$route['md_message'] = 'Template/md_message_page';
+$route['md_message/update'] = 'Template/md_message_update';
+$route['rgards_page'] = 'Template/rgards_page';
+$route['rgards/update'] = 'Template/regards_update';
 
 
 /* --------- Slider Route ----------*/
@@ -115,3 +123,13 @@ $route['deliver/order/list'] = 'Order/deliver_order_list';
 $route['order/view/(:any)'] = 'Order/view_order_product/$1';
 $route['order/deliver/(:any)'] = 'Order/deliver_order/$1';
 
+
+
+/*---------- News Event ------------------*/
+
+$route['news_and_event'] = 'NewsAndEvent/news_and_event_page';
+$route['news/create'] = 'NewsAndEvent/news_and_event_create_page';
+$route['event/store'] = 'NewsAndEvent/news_and_event_store';
+$route['event/edit/(:any)'] = 'NewsAndEvent/news_and_event_edit/$1';
+$route['event/update/(:any)'] = 'NewsAndEvent/news_and_event_update/$1';
+$route['event/delete/(:any)'] = 'NewsAndEvent/news_and_event_delete/$1';

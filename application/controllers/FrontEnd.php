@@ -7,11 +7,12 @@ class FrontEnd extends CI_Controller {
 	{
 		parent::__construct();
 
-		$vars['about_us'] = $this->Template_model->get_about_us_info();
-		$vars['address'] = $this->Template_model->get_address_info();
-		$vars['phone'] = $this->Template_model->get_phone_info();
-		$vars['email'] = $this->Template_model->get_email_info();
-		$vars['categories'] = $this->Category_model->get_all_category_info();
+		$vars['about_us'] 		= $this->Template_model->get_about_us_info();
+		$vars['address'] 		= $this->Template_model->get_address_info();
+		$vars['phone']			= $this->Template_model->get_phone_info();
+		$vars['email'] 			= $this->Template_model->get_email_info();
+		$vars['categories'] 	= $this->Category_model->get_all_category_info();
+		
 		$this->load->vars( $vars);
 	}
 
@@ -21,12 +22,20 @@ class FrontEnd extends CI_Controller {
 		$data['title']='Home Page';
 		$data['page_path']='frontEnd/index/index';
 		$data['sliders'] = $this->Slider_model->get_all_slider_data();
-		$data['top_ads'] = $this->Ads_model->top_ads_data();
-		$data['middel_ads'] = $this->Ads_model->middel_ads_data();
 		$data['bottom_ads'] = $this->Ads_model->bottom_ads_data();
 		$data['feature_products'] = $this->Product_model->get_feature_products();
 		$data['new_products'] = $this->Product_model->get_top_sale_products(12);
 		$data['all_products'] = $this->Product_model->get_all_products();
+
+
+
+		$data['welcome_note']	= $this->Template_model->get_wellcome_note();
+		$data['md_name']		= $this->Template_model->get_md_name_data(); 
+		$data['md_desig']		= $this->Template_model->get_md_desig_data(); 
+		$data['md_image']		= $this->Template_model->get_md_image_data(); 
+		$data['md_message']		= $this->Template_model->get_md_message_data();
+		$data['regards']		= $this->Template_model->get_regards();
+		$data['events']			= $this->NewsAndEvent_model->get_all_news_and_event();
 		$this->load->view('frontEnd/master', $data);
 	}
 
@@ -85,6 +94,37 @@ class FrontEnd extends CI_Controller {
 		$data['page_path'] = 'frontEnd/contact/contacts_us_page';
 		$this->load->view('frontEnd/master', $data);
 	}
+	/*========== Show md message===========*/
+	public function md_message_show()
+	{
+		$data['title']		= 'Message';
+		$data['page_path'] 	= 'frontEnd/pages/md_message';
+		$data['md_name']	= $this->Template_model->get_md_name_data(); 
+		$data['md_desig']	= $this->Template_model->get_md_desig_data(); 
+		$data['md_image']	= $this->Template_model->get_md_image_data(); 
+		$data['md_message']	= $this->Template_model->get_md_message_data();
+		$this->load->view('frontEnd/master', $data);
+	}
+
+
+	/*========== news and event singel page =========*/
+
+	public function read_news_event($id=null)
+	{
+		$data['title']='Contacts Us';
+		$data['page_path'] = 'frontEnd/pages/news_event_page';
+		$data['event'] = $this->NewsAndEvent_model->get_news_event_by_id($id);
+		$this->load->view('frontEnd/master', $data);
+	}
+
+
+
+
+
+
+
+
+
 
 	/*========= Cart page============*/
 	public function cart_page()

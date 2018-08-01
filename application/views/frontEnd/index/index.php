@@ -1,101 +1,56 @@
 
-<?php if(isset($top_ads)){ $i = 0; $j=0; ?>
+
 <div class="ban-bottom-w3l">
 	<div class="container">
 
-		<?php foreach($top_ads as $top){ ?>
-			<?php $ads_img = $top->image_path; if(!@getimagesize($ads_img)){ $ads_img = base_url().'libs/upload_pic/no_image_available.jpeg';} ?>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+				  	<div class=" c_header">
+				    	<h3 class="panel-title ">Welcome Message</h3>
+				  	</div>
+				  	<div class="panel-body">
+				    	<p>
+				    		<?php if($welcome_note && isset($welcome_note)){echo $welcome_note->value; }?>
+				    	</p>
+				  	</div>
+				</div>
 
-			<?php if($top->position == 1){ ?>
-			<div class="col-md-6 ban-bottom">
-				<div class="ban-top">
-
-					<img src="<?= $ads_img ?>" class="img-responsive" alt=""/>
-					<div class="ban-text">
-						<h4><?= $top->a_title; ?></h4>
-					</div>
-					<?php if(!is_null($top->discount)): ?>
-					<div class="ban-text2 hvr-sweep-to-top">
-						<h4><?= $top->discount; ?>% <span>Off/-</span></h4>
-					</div>
-					<?php endif;?>
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-default">
+				  	<div class="c_header">
+				    	<h3 class="panel-title"><?= ucfirst($md_desig->value); ?> Message</h3>
+				  	</div>
+				  	<div class="panel-body">
+				    	<div class="col-md-3" style="float: left;">
+							
+							<?php if($md_image && isset($md_image)){
+								$image = base_url().$md_image->value; 
+								if(!@getimagesize($image)){$image = base_url().'libs/upload_pic/admin_image/admin_defult.jpg' ; }
+							}?>
+							<img  class="img-fluid" src="<?= $image?>" alt="<?= $md_name->value; ?>" style="margin: 0 auto; height: 100px; width: 100px;">
+						
+						</div>
+						<div class="col-md-9 col-sm-9" >
+							<p class="md-name"><?= ucfirst($md_name->value); ?></p>
+							<p class="md-des"><?= ucfirst($md_desig->value); ?></p>
+							<p class="card-text" style="padding-top: 5px;"><?php if($md_message && isset($md_message)){echo substr($md_message->value, 0, 350); }?>
+								
+							</p>
+						</div>
+						<div class="col-md-12" style="clear: both; padding-top: 10px;">
+							<a href="<?= base_url();?>message-of-md" class="btn btn-sm btn-info pull-right" >Read More</a>
+						</div>
+				  	</div>
 				</div>
 			</div>
-
-			<?php }?> <!-- /if($top->position == 1) -->
-
-			<?php if($top->position == 2 || $top->position== 3 || $top->position==4){ ?>
-				<?php if($i == 0){?>
-			<div class="col-md-6 ban-bottom3">
-				<?php }?> <!--/if($i == 0) -->
-
-
-				<?php if($top->position == 2){?>
-				<div class="ban-top">
-					<img src="<?= $ads_img; ?>" class="img-responsive" alt=""/>
-					<div class="ban-text1">
-						<h4><?= $top->a_title; ?></h4>
-					</div>
-					<?php if(!is_null($top->discount)): ?>
-						<div class="latest-text2 hvr-sweep-to-top" style="    width: 11%;">
-							<h4>-<?= $top->discount; ?>%</h4>
-						</div>
-					<?php endif;?>
-				</div>
-				<?php }?><!--/if($top->position == 2) -->
-
-
-				<?php if($top->position== 3 || $top->position==4){ ?>
-					<?php if($j == 0){?>
-				<div class="ban-img">
-					<?php }?> <!--/if($j == 0) -->
-
-					<?php if($top->position == 3){?>
-					<div class=" ban-bottom1">
-						<div class="ban-top">
-							<img src="<?= $ads_img; ?>" class="img-responsive" alt=""/>
-							<div class="ban-text1">
-								<h4><?= $top->a_title; ?></h4>
-							</div>
-							<?php if(!is_null($top->discount)): ?>
-								<div class="latest-text2 hvr-sweep-to-top" style="width: 23%; left: 37%;">
-									<h4>-<?= $top->discount; ?>%</h4>
-								</div>
-							<?php endif;?>
-						</div>
-					</div>
-					<?php } if($top->position == 4){?> <!--/if($top->position == 3) --> 
-
-					<div class="ban-bottom2">
-						<div class="ban-top">
-							<img src="<?= $ads_img; ?>" class="img-responsive" alt=""/>
-							<div class="ban-text1">
-								<h4><?= $top->a_title; ?></h4>
-							</div>
-							<?php if(!is_null($top->discount)): ?>
-								<div class="latest-text2 hvr-sweep-to-top" style="width: 23%; left: 37%;">
-									<h4>-<?= $top->discount; ?>%</h4>
-								</div>
-							<?php endif;?>
-						</div>
-					</div>
-
-
-					<div class="clearfix"></div>	
-					<?php }  $j++; if($j==2){ ?>  <!--/if($top->position == 4) --> 
-				</div>
-				<?php } }?> <!-- /if($j==2) /if($top->position== 3 || $top->position==4) -->
-
-				<?php $i++; if($i==3){ ?>
-			</div>
-			<?php }  } ?> <!--/if($i==3) /if($top->position == 2 || $top->position== 3 || $top->position==4) -->
-
-		<?php }?> <!--foreach end -->
+		</div>
 
 		<div class="clearfix"></div>
 	</div>
 </div>
-<?php } ?> <!--main if end -->
+
 <!--banner-bottom-->
 
 
@@ -105,7 +60,7 @@
 <div class="new-arrivals-w3agile">
 	<div class="container">
 		<h2 class="tittle">Feature Arrivals</h2>
-		<?php foreach($feature_products as $feature): ?>
+		<?php $count =0;  foreach($feature_products as $feature): ?>
 
 			<?php if($i == 0){ ?>
 			<div class="arrivals-grids">
@@ -135,14 +90,11 @@
 						<div class="ribben">
 							<p>TOP SALE</p>
 						</div>
-					<?php endif; if($feature->discount != null ):  ?>
-						<div class="ribben1">
-							<p>-<?= $feature->discount ?>%</p>
-						</div>
-					<?php endif; ?>
+					<?php endif;?>
+						
 
 					<div class="women">
-						<h6><a href="<?= base_url();?>singel/product/<?= $feature->id; ?>"><?= ucfirst($feature->product_name);?></a></h6>
+						<h6 style="font-size: 1em;"><a href="<?= base_url();?>singel/product/<?= $feature->id; ?>"><?= ucfirst($feature->product_name);?></a></h6>
 						<span class="size"><?= ucfirst($feature->b_title); ?></span>
 						<p>
 							<?php if($feature->prv_price): ?><del><?= $feature->prv_price; ?> Tk</del> <?php endif; ?>
@@ -153,7 +105,7 @@
 				</div>
 			</div>
 
-			<?php $i++; if($i==4){$i = 0;} if($i==0 || count($feature_products) == $i){?>
+			<?php $i++; $count++;  if($i==4){$i = 0;} if($i==0 || count($feature_products) == $count){?>
 			<div class="clearfix"></div>
 		</div>
 		<?php } endforeach;?> <!-- /if($i==0) /foreach($feature_products as $feature) -->
@@ -161,127 +113,45 @@
 </div>
 <?php endif; ?>
 <!--new-arrivals-->
-
-
-
-<!--accessories-->
-<?php if($middel_ads){
-
-$ads_img = $middel_ads->image_path; if(!@getimagesize($ads_img)){ $ads_img = base_url().'libs/upload_pic/no_image_available.jpeg';} 
-	?>
-
-<div class="accessories-w3l" style="background: url('<?= $ads_img; ?>') no-repeat 0px 0px">
+<div class="ban-bottom-w3l" style="background-color: #ffffff">
 	<div class="container">
-		<?php if(!is_null($middel_ads->discount)):?>
-		<h3 class="tittle"><?= $middel_ads->discount; ?>% Discount on</h3>
-		<?php endif;?>
-		<span><?= ucfirst($middel_ads->a_title); ?></span>
-		<!-- <div class="button">
-			<a href="#" class="button1"> Shop Now</a>
-			<a href="#" class="button1"> Quick View</a>
-		</div> -->
-	</div>
-</div>
-<?php }?>
-<!--accessories-->
-<!--Products-->
 
-<?php if($new_products): $i=0; ?>
-<div class="product-agile">
-	<div class="container">
-		<h3 class="tittle1"> New Products</h3>
-		<div class="slider">
-			<div class="callbacks_container">
-				<ul class="rslides" id="slider">
-					<?php foreach($new_products as $product){?>
-						<?php if($i == 0){?>
-					<li>	 
-						<div class="caption">
-							<?php }?> <!-- /if($i == 0) -->
-							<div class="col-md-3 cap-left simpleCart_shelfItem">
-								<div class="grid-arr">
-									<div  class="grid-arrival">
-										<figure>		
-											<a href="<?= base_url();?>singel/product/<?= $product->id; ?>">
-												<?php 
-													$product_images = $this->db->where('product_id', $product->id)->limit(2)->get('product_images')->result();
-														if($product_images){
-															foreach($product_images as $product_image){
-													 ?>
-														<div class="grid-img">
-															<?php  $image = $product_image->image_path; if(!@getimagesize($image)){ $image = base_url().'libs/upload_pic/no_image_available.jpeg';}  ?>
-															<img  src="<?= $image;?>" class="img-responsive" alt="<?= $product->product_name; ?>">
-														</div>
-												<?php } } ?>			
-											</a>		
-										</figure>	
-									</div>
-									
-									<?php if($product->discount != null ): ?>
-									<div class="ribben1">
-										<p>-<?= $product->discount ?>%</p>
-									</div>
-									<?php endif; ?>
-									<div class="women">
-										<h6><a href="<?= base_url(); ?>singel/product/<?= $product->id; ?>"><?= ucfirst($product->product_name);?></a></h6>
-										<span class="size"><?= ucfirst($product->b_title); ?></span>
-										<p>
-											<?php if($product->prv_price): ?><del><?= $product->prv_price; ?> Tk</del> <?php endif; ?>
-											<em class="item_price"><?= $product->price ;?> Tk</em>
-										</p>
-										<a href="#" data-text="Add To Cart" data-product_id="<?= $product->id; ?>" data-product_name="<?= ucfirst($product->product_name);?>" data-qty="1" data-price="<?= $product->price ;?>" class="my-cart-b  cart_add"  >Add To Cart</a>
-									</div>
-								</div>
-							</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+				  	<div class=" c_header">
+				    	<h3 class="panel-title ">Our Regards</h3>
+				  	</div>
+				  	<div class="panel-body" style="text-align: left; font-style: justify;">
+				    	<p>
+				    		<?php if($regards && isset($regards)){echo ucfirst($regards->value); }?>
+				    	</p>
+				  	</div>
+				</div>
 
-							<?php $i++; if($i==4){$i =0;} if($i==0 || count($new_products) == $i){?>
-							<div class="clearfix"></div>
-						</div>
-					</li>
+			</div>
 
-					<?php } }?><!--/if($i==0 || count($new_products) == $i) /foreach($new_products as $product) -->
-				</ul>
+			<div class="col-md-6">
+				<div class="panel panel-default">
+				  	<div class=" c_header">
+				    	<h3 class="panel-title ">Our Regards</h3>
+				  	</div>
+				  	<div class="panel-body" style="text-align: left; font-style: justify;">
+				    	<marquee onmouseover="this.stop();" onmouseout="this.start();" direction="up" scrollamount="1" scrolldelay="50" top="0" left="0" >
+			                <div class="marqueeContent">
+			                    <?php if($events && isset($events)): foreach ($events as $event): ?>
+			                        <p class="latestNewsSummery"><a class="menu_blue" href="<?= base_url('news-and-event/').$event->id; ?>"><?php echo $event->title; ?></a></p>
+			                        <p class="latestNewsDate">Published Date: <span><?php echo date("d/m/Y", strtotime($event->date)); ?></span></p>
+			                    <?php endforeach; endif; ?>
+			                </div>
+			            </marquee>
+				  	</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
 </div>
-<?php endif; ?>
-<!--Products-->
-
-
-<?php if($bottom_ads): $i=0;?>
-<div class="latest-w3">
-	<div class="container">
-		<h3 class="tittle1">Latest Fashion Trends</h3>
-		<?php foreach($bottom_ads as $bottom): ?>
-
-			<?php if($i == 0): ?>
-			<div class="latest-grids">
-			<?php endif;?> <!--/if($i == 0): -->
-
-				<div class="col-md-4 latest-grid">
-					<div class="latest-top">
-						<?php $ads_img = $bottom->image_path; if(!@getimagesize($ads_img)){ $ads_img = base_url().'libs/upload_pic/no_image_available.jpeg';} ?>
-						<img  src="<?= $ads_img;?>" class="img-responsive"  alt="<?= ucfirst($bottom->a_title)?>">
-						<div class="latest-text">
-							<h4><?= ucfirst($bottom->a_title)?></h4>
-						</div>
-						<?php if($bottom->discount): ?>
-						<div class="latest-text2 hvr-sweep-to-top">
-							<h4>-<?= $bottom->discount; ?>%</h4>
-						</div>
-						<?php endif; ?>
-					</div>
-				</div>
-				<?php $i++; if($i == 3){$i =0; }?> <!-- increnet and check then reset $i value-->
-
-			<?php if($i==0): ?>
-				<div class="clearfix"></div>
-			</div>
-		<?php endif; endforeach; ?> <!-- /if($i==0) /foreach($bottom_ads as $bottom) -->
-	</div>
-</div>
-<?php endif; ?>
 
 
 <?php if($all_products):?>
@@ -308,18 +178,15 @@ $ads_img = $middel_ads->image_path; if(!@getimagesize($ads_img)){ $ads_img = bas
 							</a>		
 						</figure>	
 					</div>
-					<?php if($product->discount != null ): ?>
-						<div class="ribben1">
-							<p>-<?= $product->discount ?>%</p>
-						</div>
-					<?php endif; if($product->top_sell == 1): ?>
+					
+					<?php if($product->top_sell == 1): ?>
 						<div class="ribben">
 							<p>TOP SALE</p>
 						</div>
 					<?php endif;?>
 						
 					<div class="women">
-						<h6><a href="<?= base_url(); ?>singel/product/<?= $product->id; ?>"><?= ucfirst($product->product_name);?></a></h6>
+						<h6 style="font-size: 1em;"><a href="<?= base_url(); ?>singel/product/<?= $product->id; ?>"><?= ucfirst($product->product_name);?></a></h6>
 						<span class="size"><?= ucfirst($product->b_title); ?></span>
 						<p>
 							<?php if($product->prv_price): ?><del><?= $product->prv_price; ?> Tk</del> <?php endif; ?>

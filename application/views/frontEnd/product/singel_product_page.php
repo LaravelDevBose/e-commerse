@@ -82,8 +82,8 @@
 						<a href="<?= base_url(); ?>singel/product/<?= $product->id; ?>"><img class="img-responsive " src="<?= $image ;?>" alt="<?= ucfirst($product->product_name)?>"></a>	
 					</div>
 					<div class="recent-right">
-						<h6 class="best2"><a href="<?= base_url(); ?>singel/product/<?= $product->id; ?>"><?= ucfirst($product->product_name)?> </a></h6>
-						<span class="size">Brand: <?= ucfirst($product->b_title); ?></span>
+						<h6 class="best2"><a style="font-size: 1.1em;" href="<?= base_url(); ?>singel/product/<?= $product->id; ?>"><?= ucfirst($product->product_name)?> </a></h6>
+						<span class="size" style="font-size: .9em;">Brand: <?= ucfirst($product->b_title); ?></span>
 						<span class=" price-in1"> <?= $product->price; ?> TK</span>
 					</div>	
 					<div class="clearfix"> </div>
@@ -117,8 +117,8 @@
 										<a href="<?= base_url(); ?>singel/product/<?= $f_product->id; ?>"><img class="img-responsive " src="<?= $image ;?>" alt="<?= ucfirst($f_product->product_name)?>"></a>	
 									</div>
 									<div class="recent-right">
-										<h6 class="best2"><a href="<?= base_url(); ?>singel/product/<?= $f_product->id; ?>"><?= ucfirst($f_product->product_name)?> </a></h6>
-										<span class="size">Brand: <?= ucfirst($f_product->b_title); ?></span>
+										<h6 class="best2"><a style="font-size: 1.1em;" href="<?= base_url(); ?>singel/product/<?= $f_product->id; ?>"><?= ucfirst($f_product->product_name)?> </a></h6>
+										<span class="size" style="font-size: .9em;">Brand: <?= ucfirst($f_product->b_title); ?></span>
 										<span class=" price-in1"> <?= $f_product->price; ?> TK</span>
 									</div>	
 									<div class="clearfix"> </div>
@@ -172,18 +172,8 @@
 						</figure>	
 					</div>
 
-					<?php if($t_product->top_sell = 1 ): ?>
-						<div class="ribben">
-							<p>TOP SALE</p>
-						</div>
-					<?php endif; if($t_product->discount != null ):  ?>
-						<div class="ribben1">
-							<p>-<?= $t_product->discount ?>%</p>
-						</div>
-					<?php endif; ?>
-
 					<div class="women">
-						<h6><a href="<?= base_url();?>singel/product/<?= $t_product->id; ?>"><?= ucfirst($t_product->product_name);?></a></h6>
+						<h6 style="font-size: .9em!important;"><a href="<?= base_url();?>singel/product/<?= $t_product->id; ?>"><?= ucfirst($t_product->product_name);?></a></h6>
 						<span class="size"><?= ucfirst($t_product->b_title); ?></span>
 						<p>
 							<?php if($t_product->prv_price): ?><del><?= $t_product->prv_price; ?> Tk</del> <?php endif; ?>

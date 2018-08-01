@@ -124,7 +124,7 @@ Class Product_model extends CI_Model{
 	{	
 		$filesCount = count($_FILES['images']['name']);	
 		
-		$attr = [
+		$attr = array(
 			'product_id' 	=> $this->input->post('product_id'),
 			'product_name' 	=> $this->input->post('product_name'),
 			'brand_id' 		=> $this->input->post('brand_id'),
@@ -141,7 +141,7 @@ Class Product_model extends CI_Model{
 			'status' 		=> $this->input->post('status'),
 			'details' 		=> $this->input->post('details'),
 			'created_at'	=>date('Y-m-d h:m:s')
-		];
+		);
 
 		$insert = $this->db->insert('products', $attr);
 		$product_id = $this->db->insert_id();
@@ -192,7 +192,7 @@ Class Product_model extends CI_Model{
 	public function updated_product_info($id = null)
 	{
 		$filesCount = count($_FILES['images']['name']);
-		$attr = [
+		$attr = array(
 			'product_id' 	=> $this->input->post('product_id'),
 			'product_name' 	=> $this->input->post('product_name'),
 			'brand_id' 		=> $this->input->post('brand_id'),
@@ -208,7 +208,7 @@ Class Product_model extends CI_Model{
 			'overview' 		=> $this->input->post('overview'),
 			'status' 		=> $this->input->post('status'),
 			'details' 		=> $this->input->post('details')
-		];
+		);
 
 		$this->db->where('id', $id);
 		$insert = $this->db->update('products', $attr);
@@ -243,10 +243,10 @@ Class Product_model extends CI_Model{
 	/*==========Insert Image Info in Database===========*/
 	public function insert_image_in_database($image_path=null, $product_id = null)
 	{
-		$attr=[
+		$attr=array(
 			'product_id' => $product_id,
 			'image_path' => $image_path
-		];
+		);
 
 		$insert = $this->db->insert('product_images', $attr);
 
@@ -296,7 +296,8 @@ Class Product_model extends CI_Model{
 
 		 $this->image_lib->initialize($configSize1);
 		 $this->image_lib->resize();
-		 $this->image_lib->clear();		 
+		 $this->image_lib->clear();
+				 
 	}
 
 
@@ -327,7 +328,7 @@ Class Product_model extends CI_Model{
 		$this->db->delete('products');
 
 		$product_images = $this->db->where('product_id', $id)->get('product_images')->result();
-		var_dump($product_images); exit();
+		// var_dump($product_images); exit();
 		if($this->db->affected_rows()){
 
 			if(isset($product_images)){

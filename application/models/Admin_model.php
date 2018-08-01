@@ -104,7 +104,7 @@ Class Admin_model extends CI_Model{
 	{
 		$old_password = md5($this->input->post('old_password'));
 
-		$attr = ['id'=>$id,'password'=>$old_password];
+		$attr = array('id'=>$id,'password'=>$old_password);
 
 		$query1 = $this->db->get_where('admins', $attr);
 		$password = $this->input->post('password');
@@ -158,7 +158,7 @@ Class Admin_model extends CI_Model{
 	{
 		$old_password = md5($this->input->post('old_password'));
 
-		$attr = ['id'=>$id,'password'=>$old_password];
+		$attr = array('id'=>$id,'password'=>$old_password);
 
 		$query1 = $this->db->get_where('admins', $attr);
 		$password = $this->input->post('password');
@@ -211,7 +211,7 @@ Class Admin_model extends CI_Model{
 		$old_password = md5($this->input->post('old_password'));
 
 		$id = $this->input->post('id');
-		$attr = ['id'=>$id,'password'=>$old_password];
+		$attr = array('id'=>$id,'password'=>$old_password);
 
 		$query1 = $this->db->get_where('admins', $attr);
 		if($query1->num_rows() == 1){

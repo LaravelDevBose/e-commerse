@@ -49,7 +49,7 @@
 			<p>&copy; 2018 Khan Traders . All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
 		</div>
 		<div class="copy-right">
-			<img src="<?= base_url();?>libs/frontEnd/images/card.png" alt=""/>
+			<p>Developed By: <a rel="nofollow" href="http://linktechbd.com/">Link Up Technology Ltd.</a></p>
 		</div>
 		<div class="clearfix"></div>
 	</div>

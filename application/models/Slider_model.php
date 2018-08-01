@@ -18,10 +18,10 @@ Class Slider_model extends CI_Model{
 
 		$file_path = $this->image_upload($imageName, $tmp_name);
 		$this->image_resize($file_path);
-		$attr = [
+		$attr = array(
 			's_title' => 'Slider Image',
 			'image' =>$file_path
-		];
+		);
 		$insert = $this->db->insert('sliders', $attr);
 
 		if($insert): return TRUE; else: return FALSE; endif; 
@@ -79,9 +79,9 @@ Class Slider_model extends CI_Model{
 		 $configSize1['source_image'] 	 = $sourse;
 		 $configSize1['create_thumb']    = FALSE;
 		 $configSize1['maintain_ratio']  = FALSE;
-		 $configSize1['width']           = 1200;
+		 $configSize1['width']           = 1700;
 		 $config['quality']   			 = '100';
-		 $configSize1['height']          = 500;
+		 $configSize1['height']          = 600;
 		 $configSize1['new_image'] 		 = './libs/upload_pic/slider_image/';
 
 		 $this->image_lib->initialize($configSize1);

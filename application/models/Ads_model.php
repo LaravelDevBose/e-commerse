@@ -48,12 +48,12 @@ Class Ads_model extends CI_Model{
 	/*========== Sotre Ads Data========= */
 	public function insert_ads_data($image_path = null)
 	{
-		$attr=[
+		$attr=array(
 			'a_title' => $this->input->post('a_title'),
 			'position' => $this->input->post('position'),
 			'discount' => $this->input->post('discount'),
 			'image_path' =>$image_path,
-		];
+		);
 
 		$insert =  $this->db->insert('ads', $attr);
 		if($insert): return TRUE; else: return FALSE; endif;

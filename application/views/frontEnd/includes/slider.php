@@ -10,7 +10,7 @@
 							if(@getimagesize($image)):
 					 ?>
 								<div class="core-slider_item">
-									<img src="<?= $image;?>" style="width: 100%; " class="img-responsive" alt="Slider imgae">
+									<img src="<?= $image;?>"  class="img-responsive" alt="Slider imgae">
 								</div>
 					 <?php endif; endforeach; endif;?>
 				 </div>

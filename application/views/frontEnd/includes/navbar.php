@@ -53,31 +53,7 @@
 					</div>
 					</nav>
 				</div>
-				<div class="logo-nav-right">
-					<ul class="cd-header-buttons">
-						<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-					</ul> <!-- cd-header-buttons -->
-					<div id="cd-search" class="cd-search">
-						<form action="#" method="post">
-							<input name="Search" type="search" placeholder="Search...">
-						</form>
-					</div>	
-				</div>
-				<!-- <div class="header-right2">
-					<div class="cart box_1">
-						<a href="<?= base_url();?>cart">
-							<h3> 
-								<div class="total">
-									<span class="simpleCart_total"></span> 
-									(<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)
-								</div>
-								<img src="<?= base_url();?>libs/frontEnd/images/bag.png" alt="" />
-							</h3>
-						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-						<div class="clearfix"> </div>
-					</div>	
-				</div> -->
+				
 				<div class="clearfix"> </div>
 			</div>
 		</div>

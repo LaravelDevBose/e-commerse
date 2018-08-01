@@ -38,12 +38,15 @@
 					<li><a href="<?php echo base_url();?>brand"><i class="icon-list-unordered"></i> <span> Brand</span></a></li>
 					<li><a href="<?php echo base_url();?>category"><i class=" icon-cog2"></i> <span> Category</span></a></li>
 					<li><a href="<?php echo base_url();?>products"><i class="icon-bag"></i> <span> Products</span></a></li>
+					<li><a href="<?php echo base_url();?>news_and_event"><i class="icon-bag"></i> <span> News & Event</span></a></li>
 
 					<li> <a href="#"><i class="icon-stack2"></i> <span>Template Design</span></a>
 						<ul>
 							<li><a href="<?= base_url(); ?>template/about">Site Setting</a></li>
 							<li><a href="<?= base_url(); ?>sliders">Slider</a></li>
-							<li><a href="<?= base_url(); ?>ads">Ads</a></li>
+							<li ><a href="<?= base_url(); ?>wellcome_note">WellCome Note</a></li>
+							<li ><a href="<?= base_url(); ?>md_message">Md Message</a></li>
+							<li ><a href="<?= base_url(); ?>rgards_page">Regards</a></li>
 							
 						</ul>
 					</li>

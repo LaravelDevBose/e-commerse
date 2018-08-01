@@ -432,7 +432,7 @@ a.simpleCart_empty {
 }
 /*-- //header --*/
 .ban-bottom-w3l {
-    padding: 5em 0;
+    padding: 1em 0;
 }
 .ban-bottom1 {
     float: left;
@@ -559,8 +559,8 @@ h2.tittle {
     color: #1565C0;
 }
 .new-arrivals-w3agile {
-    padding: 5em 0;
-    background: #F9F8F8;
+  padding: 1em 0;
+  background: #F9F8F8;
 	text-align:center;
 }
 .arrivals-grids {
